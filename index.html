@@ -46,7 +46,7 @@ animation:float 6s linear infinite;
 
 <body>
 
-<h1>Happy Birthday Ankit 🎉</h1>
+<<h1 id="typing"></h1>
 
 <p>Scan karne ke liye thanks 😄</p>
 
@@ -62,7 +62,30 @@ animation:float 6s linear infinite;
 
 <img class="balloon" src="https://cdn-icons-png.flaticon.com/512/3468/3468371.png" style="left:10%;">
 <img class="balloon" src="https://cdn-icons-png.flaticon.com/512/3468/3468371.png" style="left:40%;animation-delay:2s;">
-<img class="balloon" src="https://cdn-icons-png.flaticon.com/512/3468/3468371.png" style="left:70%;animation-delay:4s;">
+<img class="balloon" src="https://cdn-icons-png.flaticon.com/512/3468/3468371.png" style="left:70%;animation-delay:<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
+<script>
+setTimeout(() => {
+confetti({
+particleCount: 200,
+spread: 120,
+origin: { y: 0.6 }
+});
+}, 1000);
+</script>
+  <script>
+const text = "Happy Birthday Ankit 🎉";
+let i = 0;
+
+function typingEffect() {
+if (i < text.length) {
+document.getElementById("typing").innerHTML += text.charAt(i);
+i++;
+setTimeout(typingEffect, 80);
+}
+}
+
+typingEffect();
+</script>
 </body>
 </html>
