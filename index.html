@@ -3,20 +3,43 @@
 <title>Happy Birthday 🎂</title>
 
 <style>
+
 body{
 text-align:center;
-background:linear-gradient(to right, pink, lightyellow);
 font-family:Arial;
+background:linear-gradient(45deg,#ff9a9e,#fad0c4,#fad0c4,#ffdde1);
+background-size:400% 400%;
+animation:bg 6s infinite alternate;
+}
+
+@keyframes bg{
+0%{background-position:left;}
+100%{background-position:right;}
 }
 
 h1{
 color:red;
-font-size:45px;
+font-size:48px;
+animation:glow 1s infinite alternate;
 }
 
-p{
-font-size:22px;
+@keyframes glow{
+from{opacity:0.6;}
+to{opacity:1;}
 }
+
+.balloon{
+position:fixed;
+bottom:-150px;
+width:60px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+100%{transform:translateY(-120vh);}
+}
+
 </style>
 
 </head>
@@ -33,9 +56,13 @@ font-size:22px;
 
 <br><br>
 
-<audio controls autoplay>
+<audio autoplay controls>
 <source src="https://www2.cs.uic.edu/~i101/SoundFiles/HappyBirthday.wav">
 </audio>
+
+<img class="balloon" src="https://cdn-icons-png.flaticon.com/512/3468/3468371.png" style="left:10%;">
+<img class="balloon" src="https://cdn-icons-png.flaticon.com/512/3468/3468371.png" style="left:40%;animation-delay:2s;">
+<img class="balloon" src="https://cdn-icons-png.flaticon.com/512/3468/3468371.png" style="left:70%;animation-delay:4s;">
 
 </body>
 </html>
